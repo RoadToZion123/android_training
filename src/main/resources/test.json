@@ -1,0 +1,22 @@
+{
+SportEquipment {
+    category = ACCESSORY,
+    title = 'kepka',
+    price=1000
+    } = 3,
+SportEquipment {
+    category = SHOES,
+    title = 'nike',
+    price = 1012312
+    } = 12,
+SportEquipment{
+    category = CLOTHS,
+    title = 'mayka',
+    price = 00
+    } = 5,
+SportEquipment {
+    category = SIMULATORS,
+    title = 'trenashor',
+    price=9898
+    } = 10
+}

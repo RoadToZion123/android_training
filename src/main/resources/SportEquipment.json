@@ -1,0 +1,58 @@
+[
+  {
+    "Category":"Simulator",
+    "Title":"Велотренажер",
+    "Price":"400"
+  } = 34,
+  {
+    "Category":"Simulator",
+    "Title":"Беговая дорожка",
+    "Price":"450"
+  } = 27,
+  {
+    "Category":"Simulator",
+    "Title":"Гребной тренажер",
+    "Price":"470"
+  } = 15,
+  {
+    "Category":"Simulator",
+    "Title":"Силовая мультистанция",
+    "Price":"530"
+  } = 9,
+  {
+    "Category":"Cloths",
+    "Title":"Термобелье",
+    "Price":"100"
+  } = 85,
+  {
+    "Category":"Cloths",
+    "Title":"Футболка",
+    "Price":"30"
+  } = 140,
+  {
+    "Category":"Cloths",
+    "Title":"Тренировочные перчатки",
+    "Price":"20"
+  } = 250,
+  {
+    "Category":"Shoes",
+    "Title":"Кроссовки",
+    "Price":"120"
+  } = 170,
+  {
+    "Category":"Shoes",
+    "Title":"Кеды",
+    "Price":"110"
+  } = 99,
+
+  {
+    "Category":"ACCESSORY",
+    "Title":"Фитнес браслет",
+    "Price":"60"
+  } = 210,
+  {
+    "Category":"ACCESSORY",
+    "Title":"Секундомер",
+    "Price":"30"
+  } = 110
+]
