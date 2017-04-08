@@ -5,5 +5,5 @@ package epam.enums;
  */
 public enum Category {
 
-    SIMULATORS,CLOTHS,SHOES,ACCESSORY
+    SIMULATOR, CLOTHES,SHOES, SIMULATORS, ACCESSORY
 }

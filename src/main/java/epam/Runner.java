@@ -1,42 +1,44 @@
 package epam;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
-import epam.entity.Shop;
-import epam.entity.SportEquipment;
-import epam.entity.SportEquipmentCreator;
+import epam.entity.sportEquipment.SportEquipment;
 import epam.enums.Category;
+import epam.menu.ConsoleMenu;
+import epam.util.Search;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 public class Runner {
 
     public static void main(String[] args) {
-       /* SportEquipment abc = new SportEquipment(Category.ACCESSORY, "kepka",1000);
-        SportEquipment qwe = new SportEquipment(Category.CLOTHS, "mayka",100);
-        SportEquipment zxc = new SportEquipment(Category.SHOES, "nike",1012312);
-        SportEquipment vbn = new SportEquipment(Category.SIMULATORS, "trenashor",9898);
-        Shop.getInstance().getGoods().put(abc, 3);
-        Shop.getInstance().getGoods().put(qwe, 5);
-        Shop.getInstance().getGoods().put(zxc, 12);
-        Shop.getInstance().getGoods().put(vbn, 10);
-
-
-        Map<SportEquipment, Integer> json = Shop.getInstance().getGoods();
-        System.out.println(json);
-        Gson gson = new Gson();
-
-        Map<SportEquipment, Integer> decoded = gson.fromJson((JsonElement) json, new TypeToken<Shop>(){}.getType());
-        System.out.println(decoded);*/
-
-        SportEquipmentCreator huy = new SportEquipmentCreator();
-        huy.deserializeToList();
-
-
-
-
+        //Shop.getInstance().getGoods();
+        ConsoleMenu.showMainMenu();
     }
+    //Search.Search(goo);
+
+    /*public static SportEquipment readItems() throws IOException {
+        SportEquipment qwe = new SportEquipment();
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ведите значение");
+        qwe.setCategory(Category.valueOf(input.readLine().toUpperCase()));
+        qwe.setTitle(input.readLine());
+        qwe.setPrice(Integer.parseInt(input.readLine()));
+        return(qwe);
+    }
+
+
+
+    public static void Search(Map<SportEquipment, Integer> goods) {
+        for (SportEquipment k : goods.keySet()) {
+            try {
+                k.equals(readItems());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+    }*/
 }

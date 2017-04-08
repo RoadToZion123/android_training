@@ -1,28 +1,24 @@
-package epam.entity;
+package epam.entity.sportEquipment;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import epam.entity.Shop;
 import epam.enums.Category;
-
-import java.util.StringTokenizer;
 
 /**
  * Created by Artem on 06.04.2017.
  */
 public class SportEquipment {
 
-    public SportEquipment(Category category, String title, int price) {
-        this.category = category;
+    private SportEquipment key;
+
+    public SportEquipment() {
         this.title = title;
         this.price = price;
     }
 
-    public SportEquipment(){
-
-    }
 
     @SerializedName("Category")
-
     @Expose
     private Category category;
     @SerializedName("Title")
@@ -31,6 +27,7 @@ public class SportEquipment {
     @SerializedName("Price")
     @Expose
     private int price;
+
 
     public Category getCategory() {
         return category;
@@ -56,7 +53,6 @@ public class SportEquipment {
         this.price = price;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,10 +75,13 @@ public class SportEquipment {
 
     @Override
     public String toString() {
-        return "SportEquipment{" +
-                "category=" + category +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                '}';
+        return "Товар : \n" +
+                " Категория : " + category + '\n' +
+                " Название товара : " + title + '\n'+
+                " Цена : " + price + '\n'  ;
+    }
+
+    public SportEquipment getKey() {
+        return key;
     }
 }
