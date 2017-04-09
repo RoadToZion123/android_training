@@ -10,9 +10,6 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Artem on 06.04.2017.
- */
 public class SportEquipmentCreator {
 
     public List<SportEquipment> deserializeToList(String path, TypeToken<List<SportEquipment>> token) {

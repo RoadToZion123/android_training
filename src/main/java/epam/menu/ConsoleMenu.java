@@ -1,15 +1,17 @@
 package epam.menu;
 
+import epam.entity.RentUnit;
 import epam.entity.Shop;
+import epam.entity.sportEquipment.SportEquipment;
 import epam.util.Const;
+import epam.util.Search;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
-/**
- * Created by Artem on 08.04.2017.
- */
+
 public class ConsoleMenu {
 
     private static Integer choise = 0;
@@ -41,23 +43,21 @@ public class ConsoleMenu {
             if (choise != null) {
                 switch (choise) {
                     case 1:
-                        Shop.getInstance().getGoods();
+                        Shop.getInstance().enter();
                         System.out.println("");
-                        //showPlanesSortMenu();
+                        showItemsSearchMenu();
                         breakCycle = true;
                         break;
-                    /*case 2:
-                        AirlineUtils.showEmployeeInfo();
+                    case 2:
+                        RentUnit.rentUnit();
+                        List<SportEquipment> list = RentUnit.getBasket();
+                        for (SportEquipment item : list){
+                            System.out.println(item);
+                        }
                         System.out.println("");
-                        showBackToMainMenu();
+                        showBasketMenu();
                         breakCycle = true;
                         break;
-                    case 3:
-                        showFindPlanes();
-                        System.out.println("");
-                        showBackToMainMenu();
-                        breakCycle = true;
-                        break;*/
                     case 3:
                         return;
                     default:
@@ -70,87 +70,20 @@ public class ConsoleMenu {
         }
     }
 
-   /* private static void showFindPlanes() {
-        //Search.Search();
-        Integer category = 0, title = 0, price = 0;
-        System.out.println(Const.ENTER_CATEGORY + " (" + Airline.getAirline().getPlanes().get(0).getConsumption() + ")");
-        while (true) {
-            category = getConsoleLine();
-            if (category != null) {
-                break;
-            } else {
-                System.out.println(Const.CHOOSE_FROM_OPTIONS);
-            }
-        }
-        System.out.println(Const.ENTER_TITLE + " (" + Airline.getAirline().getPlanes().get(0).getConsumption() + ")");
-        while (true) {
-            title = getConsoleLine();
-            if (title != null) {
-                break;
-            } else {
-                System.out.println(Const.CHOOSE_FROM_OPTIONS);
-            }
-        }
-        System.out.println(Const.ENTER_PRICE + " (" + Airline.getAirline().getPlanes()
-                .get(Airline.getAirline().getPlanes().size()-1).getConsumption() + ")");
-        while (true) {
-            price = getConsoleLine();
-            if (price != null) {
-                break;
-            } else {
-                System.out.println(Const.CHOOSE_FROM_OPTIONS);
-            }
-        }
-
-        List<Plane> findPlanes = AirlineUtils.findPlanesOfParametersFuel(minNumber, maxNumber);
-        System.out.println(Const.COUNT_FIND_ITEMS + findPlanes.size());
-        for (Plane plane : findPlanes) {
-            System.out.println(plane);
-        }
-    }*/
-
-    /*private static void showItemsSearchMenu(){
+    public static void showBasketMenu() {
         Boolean breakCycle = false;
-        System.out.println(Const.ITEMS_SEARCH_MENU);
+        System.out.println(Const.BACK_TO_MAIN_MENU);
 
         while (!breakCycle) {
             choise = getConsoleLine();
             if (choise != null) {
                 switch (choise) {
                     case 1:
-                        QuickSort.quickSort("peopleCapacity");
-                        AirlineUtils.showPlanesInfo();
-                        System.out.println("");
-                        showPlanesSortMenu();
-                        breakCycle = true;
-                        break;
-                    case 2:
-                        QuickSort.quickSort("carryingCapacity");
-                        AirlineUtils.showPlanesInfo();
-                        System.out.println("");
-                        showPlanesSortMenu();
-                        breakCycle = true;
-                        break;
-                    case 3:
-                        QuickSort.quickSort("Distance");
-                        AirlineUtils.showPlanesInfo();
-                        System.out.println("");
-                        showPlanesSortMenu();
-                        breakCycle = true;
-                        break;
-                    case 4:
-                        QuickSort.quickSort("consumption");
-                        AirlineUtils.showPlanesInfo();
-                        System.out.println("");
-                        showPlanesSortMenu();
-                        breakCycle = true;
-                        break;
-                    case 5:
                         System.out.println("");
                         showMainMenu();
                         breakCycle = true;
                         break;
-                    case 6:
+                    case 2:
                         return;
                     default:
                         System.out.println(Const.CHOOSE_FROM_OPTIONS);
@@ -160,5 +93,73 @@ public class ConsoleMenu {
                 System.out.println(Const.CHOOSE_FROM_OPTIONS);
             }
         }
-    }*/
+    }
+
+    private static void showItemsSearchMenu() {
+        Boolean breakCycle = false;
+        System.out.println(Const.ITEMS_SEARCH_MENU);
+
+        while (!breakCycle) {
+            choise = getConsoleLine();
+            if (choise != null) {
+                switch (choise) {
+                    case 1:
+                        System.out.println(Search.search());
+                        System.out.println("");
+                        showAddItemsMenu();
+                        breakCycle = true;
+                        break;
+
+                    case 2:
+                        System.out.println("");
+                        showMainMenu();
+                        breakCycle = true;
+                        break;
+                    case 3:
+                        return;
+                    default:
+                        System.out.println(Const.CHOOSE_FROM_OPTIONS);
+                }
+
+            } else {
+                System.out.println(Const.CHOOSE_FROM_OPTIONS);
+            }
+        }
+    }
+    private static void showAddItemsMenu() {
+        Boolean breakCycle = false;
+        System.out.println(Const.ITEMS_ADD_MENU);
+
+        while (!breakCycle) {
+            choise = getConsoleLine();
+            if (choise != null) {
+                switch (choise) {
+                    case 1:
+                        System.out.println("Товар успешно добавлен");
+                        System.out.println("");
+                        try {
+                            Thread.sleep(2000);
+                            showMainMenu();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        breakCycle = true;
+                        break;
+
+                    case 2:
+                        System.out.println("");
+                        showMainMenu();
+                        breakCycle = true;
+                        break;
+                    case 3:
+                        return;
+                    default:
+                        System.out.println(Const.CHOOSE_FROM_OPTIONS);
+                }
+
+            } else {
+                System.out.println(Const.CHOOSE_FROM_OPTIONS);
+            }
+        }
+    }
 }

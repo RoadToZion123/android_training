@@ -2,15 +2,11 @@ package epam.entity.sportEquipment;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import epam.entity.Shop;
 import epam.enums.Category;
 
-/**
- * Created by Artem on 06.04.2017.
- */
+
 public class SportEquipment {
 
-    private SportEquipment key;
 
     public SportEquipment() {
         this.title = title;
@@ -76,12 +72,9 @@ public class SportEquipment {
     @Override
     public String toString() {
         return "Товар : \n" +
-                " Категория : " + category + '\n' +
-                " Название товара : " + title + '\n'+
-                " Цена : " + price + '\n'  ;
+                " Категория : " + category + ' ' +
+                " Название товара : " + title + ' '+
+                " Цена : " + price + ' '  ;
     }
 
-    public SportEquipment getKey() {
-        return key;
-    }
 }
